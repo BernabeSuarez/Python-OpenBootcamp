@@ -1,12 +1,11 @@
 lista = []
 
-num = 0
+num = range(0,101)
 
-while num <= 99:
-    num += 1
-    lista.append(num)
+for item in num:
 
+ lista.append(item)
 
-listOrden = list(reversed(lista))
+ordList = list(reversed(lista))
 
-print(listOrden)
+print(ordList)
