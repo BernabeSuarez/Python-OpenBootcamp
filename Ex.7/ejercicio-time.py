@@ -14,10 +14,10 @@ hora = time.strftime('%H')
 # mostrar solamente los minutos
 minutos = time.strftime('%M') 
 
-
 if int(hora) >= 19:
     print(f'Hora: {hora}:{minutos}')
     print('Es hora de estar a casa')
 else:
     print(f'Hora: {hora} : {minutos}')
     print(f'faltan  {19-int(hora)} horas y {60 - int(minutos)} minutos para irnos a casa')
+
