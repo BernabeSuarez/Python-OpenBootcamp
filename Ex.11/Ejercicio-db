@@ -1,0 +1,30 @@
+import sqlite3
+
+conn = sqlite3.connect('database.db')
+
+cursor = conn.cursor()
+
+cursor.execute("CREATE TABLE alumnos(id INT, nombre TEXT, apellido TEXT)")
+
+query = "INSERT INTO alumnos(id,nombre,apellido) VALUES(?, ?, ?)"
+
+cursor.execute(query, (1, "Juan", "Gonzalez"))
+cursor.execute(query, (2, "Maria", "Rios"))
+cursor.execute(query, (3, "Ruben", "Perez"))
+cursor.execute(query, (4, "Jorge", "Gomez"))
+cursor.execute(query, (5, "Hugo", "Suarez"))
+cursor.execute(query, (6, "Jose", "Mendoza"))
+cursor.execute(query, (7, "Marta", "Sanchez"))
+cursor.execute(query, (8, "Andrea", "Lopez"))
+
+conn.commit()
+
+cursor.execute("SELECT * FROM alumnos WHERE nombre= 'Marta'")
+
+show = cursor.fetchall()
+
+print(show)
+
+cursor.close()
+conn.close()
+
